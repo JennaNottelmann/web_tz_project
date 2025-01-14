@@ -1,3 +1,4 @@
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = filter_var($_POST['email'],FILTER_VALIDATE_EMAIL);
@@ -5,9 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($name && $email && $message) {
         echo "<p>Vielen Dank für Ihre Nachricht, $name!</p>";
-    } else {
+    }
+     else {
         echo "<p>Bitte füllen Sie alle Felder aus.</p>";
+    }}
+else {
+    echo "<p>Bitte verwenden Sie das Kontaktformular.</p>";
     }
-    else {
-        echo "<p>Bitte verwenden Sie das Kontaktformular.</p>";
-    }
+?>
